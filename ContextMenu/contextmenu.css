@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.rmenu {
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #AAAAAA;
+    padding: 1px 0px;
+    margin: 0;
+    cursor: default;
+    -webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+/*
+    box-shadow: 2px 2px 2px #777777;
+*/
+}
+
+.rmenu li{ 
+    list-style: none;
+}
+.rmenu hr {
+    border: 1px solid #DDDDDD;
+    border-top: none;
+    border-left: none;
+    border-right: none
+    width: 99%;
+    height: 0px;
+    margin: 5px 0px;
+}
+.rmenu *:not(hr) { 
+    border: 0; 
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 5px 15px 2px 15px;
+}
+.rmenu *:hover { 
+    background-color: #EAEAEA
+}
+
+.rmenu .selected {
+    background-color: rgba(77, 151, 242, .5);
+    border: rgba(77, 151, 242, .5) solid 2px;
+}

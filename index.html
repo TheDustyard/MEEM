@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!--        Title-->
+        <title>Meme</title>
+        
+<!--        Meta to make it look good-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        
+<!--        Stylesheets-->
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="/ContextMenu/contextmenu.css"/>
+        
+<!--        3rd Party Scripts-->
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="res/html2canvas.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js"></script>
+        
+<!--        Scripts-->
+        <script src="/ContextMenu/contextmenu.js"></script>
+        <script src="editor.js"></script>
+        <script>if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)){alert("IE IS NOT SUPPORTED"); window.location.href = "https://www.microsoft.com/en-us/windows/microsoft-edge"}</script>
+        
+<!--        Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    </head>
+    <body onload="settableimages.init(); addListeners()">
+        <div id="tracking" style="display: none;"></div>
+        <script>$("#tracking").load("track.html");</script>
+        
+        <div id="particles-js"></div>
+        
+        <div id="content">
+<!--            Editor-->
+            <div id="editor">
+<!--                Menu bar-->
+                <menu>
+                    <mi><button onclick="deepfry()">Deep Fry</button></mi>
+                    <mi>Resize</mi>
+                    <mi>Lens Flare</mi>
+                    <mi><button onclick="save()">Save</button></mi>
+                </menu>
+<!--                Image-->
+                <div id="meme">
+                    
+                    <img draggable="false" class="noselect" id="lenseflare" style="position: absolute; top: 100px; z-index: 10000000; transform: translate(-50%, -50%);" src="res/flare.png" width="90%" height="100px">
+                    
+                    <div class="settableimage" id="testimage"></div>
+                    
+                    <div class="settabletext" id="testtext" contenteditable>Top Text</div>
+                    <div class="settabletext" id="testtext2" contenteditable>Bottom Text</div>
+                </div>
+            </div>
+        </div>
+        
+<!--        Right click menus-->
+        <div class="rmenu hide" id="settableimagemenu" data-onmenuopen="settableimages.initContext(this)">
+            <a onclick="settableimages.clearIMG(this)">Remove</a>
+            <hr>
+            <a id="imagesize-contain" onclick="settableimages.setIMGSize(this, 'contain')">Contain</a>
+            <a id="imagesize-cover" onclick="settableimages.setIMGSize(this, 'cover')">Cover</a>
+            <a id="imagesize-auto" onclick="settableimages.setIMGSize(this, 'auto')">Auto</a>
+        </div>
+        
+<!--            If Javascript is off-->
+        <noscript>
+            <video width="100%" autoplay>
+              <source src="res/beaned.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h1>
+                Oh no u friccin moron u just got nae naed.<br>
+                <pre>E n a b l e   J a v a s c r i p t</pre>
+            </h1>
+        </noscript>
+    </body>
+<!--    Load scripts after DOM loaded-->
+    <script src="particle.js"></script>
+</html>
